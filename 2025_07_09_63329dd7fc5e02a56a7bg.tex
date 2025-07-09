@@ -1,0 +1,328 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+Proof: If $f_{X}(x)$ is a pdf (or pmf), then the two properties are immediate from the definitions. In particular, for a pdf, using (1.6.3) and Theorem 1.5.3, we have that
+
+$$
+1=\lim _{x \rightarrow \infty} F_{X}(x)=\int_{-\infty}^{\infty} f_{X}(t) d t
+$$
+
+The converse implication is equally easy to prove. Once we have $f_{X}(x)$, we can define $F_{X}(x)$ and appeal to Theorem 1.5.3.
+
+From a purely mathematical viewpoint, any nonnegative function with a finite positive integral (or sum) can be turned into a pdf or pmf. For example, if $h(x)$ is any nonnegative function that is positive on a set $A, 0$ elsewhere, and
+
+$$
+\int_{\{x \in A\}} h(x) d x=K<\infty
+$$
+
+for some constant $K>0$, then the function $f_{X}(x)=h(x) / K$ is a pdf of a random variable $X$ taking values in $A$.
+
+Actually, the relationship (1.6.3) does not always hold because $F_{X}(x)$ may be continuous but not differentiable. In fact, there exist continuous random variables for which the integral relationship does not exist for any $f_{X}(x)$. These cases are rather pathological and we will ignore them. Thus, in this text, we will assume that (1.6.3) holds for any continuous random variable. In more advanced texts (for example, Billingsley 1995, Section 31) a random variable is called absolutely continuous if (1.6.3) holds.
+
+\subsection*{1.7 Exercises}
+1.1 For each of the following experiments, describe the sample space.\\
+(a) Toss a coin four times.\\
+(b) Count the number of insect-damaged leaves on a plant.\\
+(c) Measure the lifetime (in hours) of a particular brand of light bulb.\\
+(d) Record the weights of 10-day-old rats.\\
+(e) Observe the proportion of defectives in a shipment of electronic components.\\
+1.2 Verify the following identities.\\
+(a) $A \backslash B=A \backslash(A \cap B)=A \cap B^{\mathrm{c}}$\\
+(b) $B=(B \cap A) \cup\left(B \cap A^{\mathrm{c}}\right)$\\
+(c) $B \backslash A=B \cap A^{\mathrm{c}}$\\
+(d) $A \cup B=A \cup\left(B \cap A^{\mathrm{c}}\right)$\\
+1.3 Finish the proof of Theorem 1.1.4. For any events $A, B$, and $C$ defined on a sample space $S$, show that\\
+(a) $A \cup B=B \cup A$ and $A \cap B=B \cap A$.\\
+(commutativity)\\
+(b) $A \cup(B \cup C)=(A \cup B) \cup C$ and $A \cap(B \cap C)=(A \cap B) \cap C$.\\
+(associativity)\\
+(c) $(A \cup B)^{\mathrm{c}}=A^{\mathrm{c}} \cap B^{\mathrm{c}}$ and $(A \cap B)^{\mathrm{c}}=A^{\mathrm{c}} \cup B^{\mathrm{c}}$.\\
+(DeMorgan's Laws)\\
+1.4 For events $A$ and $B$, find formulas for the probabilities of the following events in terms of the quantities $P(A), P(B)$, and $P(A \cap B)$.\\
+(a) either $A$ or $B$ or both\\
+(b) either $A$ or $B$ but not both\\
+(c) at least one of $A$ or $B$\\
+(d) at most one of $A$ or $B$\\
+1.5 Approximately one-third of all human twins are identical (one-egg) and two-thirds are fraternal (two-egg) twins. Identical twins are necessarily the same sex, with male and female being equally likely. Among fraternal twins, approximately one-fourth are both female, one-fourth are both male, and half are one male and one female. Finally, among all U.S. births, approximately 1 in 90 is a twin birth. Define the following events:
+
+$$
+\begin{aligned}
+& A=\{\text { a U.S. birth results in twin females }\} \\
+& B=\{\text { a U.S. birth results in identical twins }\} \\
+& C=\{\text { a U.S. birth results in twins }\}
+\end{aligned}
+$$
+
+(a) State, in words, the event $A \cap B \cap C$.\\
+(b) Find $P(A \cap B \cap C)$.\\
+1.6 Two pennies, one with $P($ head $)=u$ and one with $P($ head $)=w$, are to be tossed together independently. Define
+
+$$
+\begin{aligned}
+& p_{0}=P(0 \text { heads occur }) \\
+& p_{1}=P(1 \text { head occurs }) \\
+& p_{2}=P(2 \text { heads occur })
+\end{aligned}
+$$
+
+Can $u$ and $w$ be chosen such that $p_{0}=p_{1}=p_{2}$ ? Prove your answer.\\
+1.7 Refer to the dart game of Example 1.2.7. Suppose we do not assume that the probability of hitting the dart board is 1 , but rather is proportional to the area of the dart board. Assume that the dart board is mounted on a wall that is hit with probability 1 , and the wall has area $A$.\\
+(a) Using the fact that the probability of hitting a region is proportional to area, construct a probability function for $P$ (scoring $i$ points), $i=0, \ldots, 5$. (No points are scored if the dart board is not hit.)\\
+(b) Show that the conditional probability distribution $P$ (scoring $i$ points|board is hit) is exactly the probability distribution of Example 1.2.7.\\
+1.8 Again refer to the game of darts explained in Example 1.2.7.\\
+(a) Derive the general formula for the probability of scoring $i$ points.\\
+(b) Show that $P$ (scoring $i$ points) is a decreasing function of $i$, that is, as the points increase, the probability of scoring them decreases.\\
+(c) Show that $P$ (scoring $i$ points) is a probability function according to the Kolmogorov Axioms.\\
+1.9 Prove the general version of DeMorgan's Laws. Let $\left\{A_{\alpha}: \alpha \in \Gamma\right\}$ be a (possibly uncountable) collection of sets. Prove that\\
+(a) $\left(\cup_{\alpha} A_{\alpha}\right)^{\mathrm{c}}=\cap_{\alpha} A_{\alpha}^{\mathrm{c}}$.\\
+(b) $\left(\cap_{\alpha} A_{\alpha}\right)^{c}=\cup_{\alpha} A_{\alpha}^{c}$.\\
+1.10 Formulate and prove a version of DeMorgan's Laws that applies to a finite collection of sets $A_{1}, \ldots, A_{n}$.\\
+1.11 Let $S$ be a sample space.\\
+(a) Show that the collection $\mathcal{B}=\{\emptyset, S\}$ is a sigma algebra.\\
+(b) Let $\mathcal{B}=\{$ all subsets of $S$, including $S$ itself $\}$. Show that $\mathcal{B}$ is a sigma algebra.\\
+(c) Show that the intersection of two sigma algebras is a sigma algebra.\\
+1.12 It was noted in Section 1.2.1 that statisticians who follow the deFinetti school do not accept the Axiom of Countable Additivity, instead adhering to the Axiom of Finite Additivity.\\
+(a) Show that the Axiom of Countable Additivity implies Finite Additivity.\\
+(b) Although, by itself, the Axiom of Finite Additivity does not imply Countable Additivity, suppose we supplement it with the following. Let $A_{1} \supset A_{2} \supset \cdots \supset$ $A_{n} \supset \cdots$ be an infinite sequence of nested sets whose limit is the empty set, which we denote by $A_{n} \downarrow \emptyset$. Consider the following:
+
+\section*{Axiom of Continuity: If $A_{n} \downarrow \emptyset$, then $P\left(A_{n}\right) \rightarrow 0$.}
+Prove that the Axiom of Continuity and the Axiom of Finite Additivity imply Countable Additivity.\\
+1.13 If $P(A)=\frac{1}{3}$ and $P\left(B^{\mathrm{c}}\right)=\frac{1}{4}$, can $A$ and $B$ be disjoint? Explain.\\
+1.14 Suppose that a sample space $S$ has $n$ elements. Prove that the number of subsets that can be formed from the elements of $S$ is $2^{n}$.\\
+1.15 Finish the proof of Theorem 1.2.14. Use the result established for $k=2$ as the basis of an induction argument.\\
+1.16 How many different sets of initials can be formed if every person has one surname and\\
+(a) exactly two given names?\\
+(b) either one or two given names?\\
+(b) either one or two or three given names?\\
+(Answers: $(a) 26^{3}(b) 26^{3}+26^{2}(c) 26^{4}+26^{3}+26^{2}$ )\\
+1.17 In the game of dominoes, each piece is marked with two numbers. The pieces are symmetrical so that the number pair is not ordered (so, for example, $(2,6)=(6,2)$ ). How many different pieces can be formed using the numbers $1,2, \ldots, n$ ?\\
+(Answer: $n(n+1) / 2$ )\\
+1.18 If $n$ balls are placed at random into $n$ cells, find the probability that exactly one cell remains empty.\\
+(Answer: $\binom{n}{2} n!/ n^{n}$ )\\
+1.19 If a multivariate function has continuous partial derivatives, the order in which the derivatives are calculated does not matter. Thus, for example, the function $f(x, y)$ of two variables has equal third partials
+
+$$
+\frac{\partial^{3}}{\partial x^{2} \partial y} f(x, y)=\frac{\partial^{3}}{\partial y \partial x^{2}} f(x, y)
+$$
+
+(a) How many fourth partial derivatives does a function of three variables have?\\
+(b) Prove that a function of $n$ variables has $\binom{n+r-1}{r} r$ th partial derivatives.\\
+1.20 My telephone rings 12 times each week, the calls being randomly distributed among the 7 days. What is the probability that I get at least one call each day?\\
+(Answer: .2285)\\
+1.21 A closet contains $n$ pairs of shoes. If $2 r$ shoes are chosen at random ( $2 r<n$ ), what is the probability that there will be no matching pair in the sample?\\
+(Answer: $\binom{n}{2 r} 2^{2 r} /\binom{2 n}{2 r}$ )\\
+1.22 (a) In a draft lottery containing the 366 days of the year (including February 29), what is the probability that the first 180 days drawn (without replacement) are evenly distributed among the 12 months?\\
+(b) What is the probability that the first 30 days drawn contain none from September?\\
+(Answers: (a) . $167 \times 10^{-8}$ (b) $\binom{336}{30} /\binom{366}{30}$ )\\
+1.23 Two people each toss a fair coin $n$ times. Find the probability that they will toss the same number of heads.\\
+(Answer: $\left(\frac{1}{4}\right)^{n}\binom{2 n}{n}$ )\\
+1.24 Two players, A and B, alternately and independently flip a coin and the first player to obtain a head wins. Assume player A flips first.\\
+(a) If the coin is fair, what is the probability that A wins?\\
+(b) Suppose that $P$ (head) $=p$, not necessarily $\frac{1}{2}$. What is the probability that A wins?\\
+(c) Show that for all $p, 0<p<1, P(\mathrm{~A}$ wins $)>\frac{1}{2}$. (Hint: Try to write $P(\mathrm{~A}$ wins) in terms of the events $E_{1}, E_{2}, \ldots$, where $E_{i}=\{$ head first appears on $i$ th toss $\}$.)\\
+(Answers: $\left.(a) 2 / 3(b) \frac{p}{1-(1-p)^{2}}\right)$\\
+1.25 The Smiths have two children. At least one of them is a boy. What is the probability that both children are boys? (See Gardner 1961 for a complete discussion of this problem.)\\
+1.26 A fair die is cast until a 6 appears. What is the probability that it must be cast more than five times?\\
+1.27 Verify the following identities for $n \geq 2$.\\
+(a) $\sum_{k=0}^{n}(-1)^{k}\binom{n}{k}=0$\\
+(b) $\sum_{k=1}^{n} k\binom{n}{k}=n 2^{n-1}$\\
+(c) $\sum_{k=1}^{n}(-1)^{k+1} k\binom{n}{k}=0$\\
+1.28 A way of approximating large factorials is through the use of Stirling's Formula:
+
+$$
+n!\approx \sqrt{2 \pi} n^{n+(1 / 2)} e^{-n}
+$$
+
+a complete derivation of which is difficult. Instead, prove the easier fact,
+
+$$
+\lim _{n \rightarrow \infty} \frac{n!}{n^{n+(1 / 2)} e^{-n}}=\text { a constant. }
+$$
+
+(Hint: Feller 1968 proceeds by using the monotonicity of the logarithm to establish that
+
+$$
+\int_{k-1}^{k} \log x d x<\log k<\int_{k}^{k+1} \log x d x, \quad k=1, \ldots, n
+$$
+
+and hence
+
+$$
+\int_{0}^{n} \log x d x<\log n!<\int_{1}^{n+1} \log x d x
+$$
+
+Now compare $\log n!$ to the average of the two integrals. See Exercise 5.35 for another derivation.)\\
+1.29 (a) For the situation of Example 1.2.20, enumerate the ordered samples that make up the unordered samples $\{4,4,12,12\}$ and $\{2,9,9,12\}$.\\
+(b) Enumerate the ordered samples that make up the unordered samples $\{4,4,12,12\}$ and $\{2,9,9,12\}$.\\
+(c) Suppose that we had a collection of six numbers, $\{1,2,7,8,14,20\}$. What is the probability of drawing, with replacement, the unordered sample $\{2,7,7,8,14,14\}$ ?\\
+(d) Verify that an unordered sample of size $k$, from $m$ different numbers repeated $k_{1}, k_{2}, \ldots, k_{m}$ times, has $\frac{k!}{k_{1}!k_{2}!\cdots k_{m}!}$ ordered components, where $k_{1}+k_{2}+\cdots+$ $k_{m}=k$.\\
+(e) Use the result of the previous part to establish the identity
+
+$$
+\sum_{k_{1}, k_{2}, \ldots, k_{m}: k_{1}+k_{2}+\cdots+k_{m}=k} \frac{k!}{k_{1}!k_{2}!\cdots k_{m}!}=\binom{k+m-1}{k} .
+$$
+
+1.30 For the collection of six numbers, $\{1,2,7,8,14,20\}$, draw a histogram of the distribution of all possible sample averages calculated from samples drawn with replacement.\\
+1.31 For the situation of Example 1.2.20, the average of the original set of numbers $\{2,4,9,12\}$ is $\frac{29}{4}$, which has the highest probability.\\
+(a) Prove that, in general, if we sample with replacement from the set $\left\{x_{1}, x_{2}, \ldots, x_{n}\right\}$, the outcome with average $\left(x_{1}+x_{2}+\cdots+x_{n}\right) / n$ is the most likely, having probability $\frac{n!}{n^{n}}$.\\
+(b) Use Stirling's Formula (Exercise 1.28) to show that $n!/ n^{n} \approx \sqrt{2 n \pi} / e^{n}$ (Hall 1992, Appendix I).\\
+(c) Show that the probability that a particular $x_{i}$ is missing from an outcome is $\left(1-\frac{1}{n}\right)^{n} \rightarrow e^{-1}$ as $n \rightarrow \infty$.\\
+1.32 An employer is about to hire one new employee from a group of $N$ candidates, whose future potential can be rated on a scale from 1 to $N$. The employer proceeds according to the following rules:\\
+(a) Each candidate is seen in succession (in random order) and a decision is made whether to hire the candidate.\\
+(b) Having rejected $m-1$ candidates $(m>1)$, the employer can hire the $m$ th candidate only if the $m$ th candidate is better than the previous $m-1$.
+
+Suppose a candidate is hired on the $i$ th trial. What is the probability that the best candidate was hired?\\
+1.33 Suppose that $5 \%$ of men and $.25 \%$ of women are color-blind. A person is chosen at random and that person is color-blind. What is the probability that the person is male? (Assume males and females to be in equal numbers.)\\
+1.34 Two litters of a particular rodent species have been born, one with two brown-haired and one gray-haired (litter 1), and the other with three brown-haired and two grayhaired (litter 2). We select a litter at random and then select an offspring at random from the selected litter.\\
+(a) What is the probability that the animal chosen is brown-haired?\\
+(b) Given that a brown-haired offspring was selected, what is the probability that the sampling was from litter 1 ?\\
+1.35 Prove that if $P(\cdot)$ is a legitimate probability function and $B$ is a set with $P(B)>0$, then $P(\cdot \mid B)$ also satisfies Kolmogorov's Axioms.\\
+1.36 If the probability of hitting a target is $\frac{1}{5}$, and ten shots are fired independently, what is the probability of the target being hit at least twice? What is the conditional probability that the target is hit at least twice, given that it is hit at least once?\\
+1.37 Here we look at some variations of Example 1.3.4.\\
+(a) In the warden's calculation of Example 1.3.4 it was assumed that if A were to be pardoned, then with equal probability the warden would tell A that either B or C would die. However, this need not be the case. The warden can assign probabilities $\gamma$ and $1-\gamma$ to these events, as shown here:
+
+\begin{center}
+\begin{tabular}{ccl}
+\hline
+Prisoner pardoned & Warden tells A &  \\
+\hline
+A & B dies & with probability $\gamma$ \\
+A & C dies & with probability $1-\gamma$ \\
+B & C dies &  \\
+C & B dies &  \\
+\hline
+\end{tabular}
+\end{center}
+
+Calculate $P(A \mid \mathcal{W})$ as a function of $\gamma$. For what values of $\gamma$ is $P(A \mid \mathcal{W})$ less than, equal to, or greater than $\frac{1}{3}$ ?\\
+(b) Suppose again that $\gamma=\frac{1}{2}$, as in the example. After the warden tells A that B will die, A thinks for a while and realizes that his original calculation was false. However, A then gets a bright idea. A asks the warden if he can swap fates with C. The warden, thinking that no information has been passed, agrees to this. Prove that A's reasoning is now correct and that his probability of survival has jumped to $\frac{2}{3}$ !\\[0pt]
+A similar, but somewhat more complicated, problem, the "Monte Hall problem" is discussed by Selvin (1975). The problem in this guise gained a fair amount of notoriety when it appeared in a Sunday magazine (vos Savant 1990) along with a correct answer but with questionable explanation. The ensuing debate was even reported on the front page of the Sunday New York Times (Tierney 1991). A complete and somewhat amusing treatment is given by Morgan et al. (1991) [see also the response by vos Savant 1991]. Chun (1999) pretty much exhausts the problem with a very thorough analysis.\\
+1.38 Prove each of the following statements. (Assume that any conditioning event has positive probability.)\\
+(a) If $P(B)=1$, then $P(A \mid B)=P(A)$ for any $A$.\\
+(b) If $A \subset B$, then $P(B \mid A)=1$ and $P(A \mid B)=P(A) / P(B)$.\\
+(c) If $A$ and $B$ are mutually exclusive, then
+
+$$
+P(A \mid A \cup B)=\frac{P(A)}{P(A)+P(B)}
+$$
+
+(d) $P(A \cap B \cap C)=P(A \mid B \cap C) P(B \mid C) P(C)$.\\
+1.39 A pair of events $A$ and $B$ cannot be simultaneously mutually exclusive and independent. Prove that if $P(A)>0$ and $P(B)>0$, then:\\
+(a) If $A$ and $B$ are mutually exclusive, they cannot be independent.\\
+(b) If $A$ and $B$ are independent, they cannot be mutually exclusive.\\
+1.40 Finish the proof of Theorem 1.3.9 by proving parts (b) and (c).\\
+1.41 As in Example 1.3.6, consider telegraph signals "dot" and "dash" sent in the proportion 3:4, where erratic transmissions cause a dot to become a dash with probability $\frac{1}{4}$ and a dash to become a dot with probability $\frac{1}{3}$.\\
+(a) If a dash is received, what is the probability that a dash has been sent?\\
+(b) Assuming independence between signals, if the message dot-dot was received, what is the probability distribution of the four possible messages that could have been sent?\\
+1.42 The inclusion-exclusion identity of Miscellanea 1.8.1 gets it name from the fact that it is proved by the method of inclusion and exclusion (Feller 1968, Section IV.1). Here we go into the details. The probability $P\left(\cup_{i=1}^{n} A_{i}\right)$ is the sum of the probabilities of all the sample points that are contained in at least one of the $A_{i} \mathrm{~s}$. The method of inclusion and exclusion is a recipe for counting these points.\\
+(a) Let $E_{k}$ denote the set of all sample points that are contained in exactly $k$ of the events $A_{1}, A_{2}, \ldots, A_{n}$. Show that $P\left(\cup_{i=1}^{n} A_{i}\right)=\sum_{i=1}^{n} P\left(E_{i}\right)$.\\
+(b) If $E_{1}$ is not empty, show that $P\left(E_{1}\right)=\sum_{i=1}^{n} P\left(A_{i}\right)$.\\
+(c) Without loss of generality, assume that $E_{k}$ is contained in $A_{1}, A_{2}, \ldots, A_{k}$. Show that $P\left(E_{k}\right)$ appears $k$ times in the sum $P_{1},\binom{k}{2}$ times in the sum $P_{2},\binom{k}{3}$ times in the sum $P_{3}$, etc.\\
+(d) Show that
+
+$$
+k-\binom{k}{2}+\binom{k}{3}-\cdots \pm\binom{ k}{k}=1
+$$
+
+(See Exercise 1.27.)\\
+(e) Show that parts $(a)-(c)$ imply $\sum_{i=1}^{n} P\left(E_{i}\right)=P_{1}-P_{2}=\cdots \pm P_{n}$, establishing the inclusion-exclusion identity.\\
+1.43 For the inclusion-exclusion identity of Miscellanea 1.8.1:\\
+(a) Derive both Boole's and Bonferroni's Inequality from the inclusion-exclusion identity.\\
+(b) Show that the $P_{i}$ satisfy $P_{i} \geq P_{j}$ if $i \geq j$ and that the sequence of bounds in Miscellanea 1.8.1 improves as the number of terms increases.\\
+(c) Typically as the number of terms in the bound increases, the bound becomes more useful. However, Schwager (1984) cautions that there are some cases where there is not much improvement, in particular if the $A_{i} \mathrm{~s}$ are highly correlated. Examine what happens to the sequence of bounds in the extreme case when $A_{i}=A$ for every $i$. (See Worsley 1982 and the correspondence of Worsley 1985 and Schwager 1985.)\\
+1.44 Standardized tests provide an interesting application of probability theory. Suppose first that a test consists of 20 multiple-choice questions, each with 4 possible answers. If the student guesses on each question, then the taking of the exam can be modeled as a sequence of 20 independent events. Find the probability that the student gets at least 10 questions correct, given that he is guessing.\\
+1.45 Show that the induced probability function defined in (1.4.1) defines a legitimate probability function in that it satisfies the Kolmogorov Axioms.\\
+1.46 Seven balls are distributed randomly into seven cells. Let $X_{i}=$ the number of cells containing exactly $i$ balls. What is the probability distribution of $X_{3}$ ? (That is, find $P\left(X_{3}=x\right)$ for every possible $x$.)\\
+1.47 Prove that the following functions are cdfs.\\
+(a) $\frac{1}{2}+\frac{1}{\pi} \tan ^{-1}(x), x \in(-\infty, \infty)$\\
+(b) $\left(1+e^{-x}\right)^{-1}, x \in(-\infty, \infty)$\\
+(c) $e^{-e^{-x}}, x \in(-\infty, \infty)$\\
+(d) $1-e^{-x}, x \in(0, \infty)$\\
+(e) the function defined in (1.5.6)\\
+1.48 Prove the necessity part of Theorem 1.5.3.\\
+1.49 A cdf $F_{X}$ is stochastically greater than a cdf $F_{Y}$ if $F_{X}(t) \leq F_{Y}(t)$ for all $t$ and $F_{X}(t)<$ $F_{Y}(t)$ for some $t$. Prove that if $X \sim F_{X}$ and $Y \sim F_{Y}$, then
+
+$$
+P(X>t) \geq P(Y>t) \quad \text { for every } t
+$$
+
+and
+
+$$
+P(X>t)>P(Y>t) \quad \text { for some } t
+$$
+
+that is, $X$ tends to be bigger than $Y$.\\
+1.50 Verify formula (1.5.4), the formula for the partial sum of the geometric series.\\
+1.51 An appliance store receives a shipment of 30 microwave ovens, 5 of which are (unknown to the manager) defective. The store manager selects 4 ovens at random, without replacement, and tests to see if they are defective. Let $X=$ number of defectives found. Calculate the pmf and cdf of $X$ and plot the cdf.\\
+1.52 Let $X$ be a continuous random variable with pdf $f(x)$ and $\operatorname{cdf} F(x)$. For a fixed number $x_{0}$, define the function
+
+$$
+g(x)= \begin{cases}f(x) /\left[1-F\left(x_{0}\right)\right] & x \geq x_{0} \\ 0 & x<x_{0}\end{cases}
+$$
+
+Prove that $g(x)$ is a pdf. (Assume that $F\left(x_{0}\right)<1$.)\\
+1.53 A certain river floods every year. Suppose that the low-water mark is set at 1 and the high-water mark $Y$ has distribution function
+
+$$
+F_{Y}(y)=P(Y \leq y)=1-\frac{1}{y^{2}}, \quad 1 \leq y<\infty
+$$
+
+(a) Verify that $F_{Y}(y)$ is a cdf.\\
+(b) Find $f_{Y}(y)$, the pdf of $Y$.\\
+(c) If the low-water mark is reset at 0 and we use a unit of measurement that is $\frac{1}{10}$ of that given previously, the high-water mark becomes $Z=10(Y-1)$. Find $F_{Z}(z)$.\\
+1.54 For each of the following, determine the value of $c$ that makes $f(x)$ a pdf.\\
+(a) $f(x)=c \sin x, 0<x<\pi / 2$\\
+(b) $f(x)=c e^{-|x|},-\infty<x<\infty$\\
+1.55 An electronic device has lifetime denoted by $T$. The device has value $V=5$ if it fails before time $t=3$; otherwise, it has value $V=2 T$. Find the cdf of $V$, if $T$ has pdf
+
+$$
+f_{T}(t)=\frac{1}{1.5} e^{-t /(1.5)}, \quad t>0
+$$
+
+\subsection*{1.8 Miscellanea}
+\subsection*{1.8.1 Bonferroni and Beyond}
+The Bonferroni bound of (1.2.10), or Boole's Inequality (Theorem 1.2.11), provides simple bounds on the probability of an intersection or union. These bounds can be made more and more precise with the following expansion.\\
+For sets $A_{1}, A_{2}, \ldots A_{n}$, we create a new set of nested intersections as follows. Let
+
+$$
+P_{1}=\sum_{i=1}^{n} P\left(A_{i}\right)
+$$
+
+$$
+\begin{aligned}
+P_{2} & =\sum_{1 \leq i<j \leq n}^{n} P\left(A_{i} \cap A_{j}\right) \\
+P_{3} & =\sum_{1 \leq i<j<k \leq n}^{n} P\left(A_{i} \cap A_{j} \cap A_{k}\right) \\
+& \vdots \\
+P_{n} & =P\left(A_{1} \cap A_{2} \cap \cdots \cap A_{n}\right) .
+\end{aligned}
+$$
+
+Then the inclusion-exclusion identity says that
+
+$$
+P\left(A_{1} \cup A_{2} \cup \cdots \cup A_{n}\right)=P_{1}-P_{2}+P_{3}-P_{4}+\cdots \pm P_{n} .
+$$
+
+Moreover, the $P_{i}$ are ordered in that $P_{i} \geq P_{j}$ if $i \leq j$, and we have the sequence of upper and lower bounds
+
+$$
+\begin{aligned}
+P_{1} & \geq P\left(\cup_{i=1}^{n} A_{i}\right) \\
+P_{1}-P_{2}+P_{3} & \geq P\left(\cup_{i=1}^{n} A_{i}\right) \\
+& \vdots
+\end{aligned}
+$$
+
+See Exercises 1.42 and 1.43 for details.\\
+These bounds become increasingly tighter as the number of terms increases, and they provide a refinement of the original Bonferroni bounds. Applications of these bounds include approximating probabilities of runs (Karlin and Ost 1988) and multiple comparisons procedures (Naiman and Wynn 1992).
+
+
+\end{document}
